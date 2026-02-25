@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Destini 125 Rental - Effortless Urban Riding | Taxiverz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#d88d0e',
+                        secondary: '#62acb5',
+                        grey: '#a2a0a1',
+                        dark: '#000000',
+                        light: '#efefef',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .nav-links-mobile { transition: all 0.3s ease-in-out; clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+        .nav-links-mobile.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        .pricing-card:hover { border-color: #d88d0e; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(216, 141, 14, 0.2); }
+    </style>
+</head>
+<body class="font-sans bg-white text-dark">
+
+    <nav class="bg-dark py-4 sticky top-0 z-[1000] shadow-lg">
+        <div class="max-w-[1200px] mx-auto px-5 flex justify-between items-center">
+            <div class="h-12">
+                <img src="taxiverz.avif" alt="Taxiverz Logo" class="h-full">
+            </div>
+
+            <div class="hidden md:flex gap-8 items-center font-semibold">
+                <a href="index.html" class="text-light hover:text-primary transition">Home</a>
+                <a href="car-rental.html" class="text-light hover:text-primary transition">Car Rental</a>
+                <a href="bike-rental.html" class="text-primary">Bike Rental</a>
+                <a href="contact.html" class="text-light hover:text-primary transition">Contact</a>
+            </div>
+
+            <div class="md:hidden text-light text-2xl cursor-pointer" id="mobile-toggle">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </div>
+        </div>
+
+        <div class="nav-links-mobile absolute top-full left-0 w-full bg-dark border-t border-primary md:hidden overflow-hidden" id="mobile-menu">
+            <div class="flex flex-col items-center py-6 gap-6 font-semibold">
+                <a href="index.html" class="text-light">Home</a>
+                <a href="car-rental.html" class="text-light">Car Rental</a>
+                <a href="bike-rental.html" class="text-primary">Bike Rental</a>
+                <a href="contact.html" class="text-light">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-br from-dark to-grey py-20 text-white">
+        <div class="max-w-[1200px] mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl font-bold mb-4 text-primary">Hero Destini 125</h1>
+                <p class="text-xl mb-6 text-light leading-relaxed">Redefining family comfort and smart travel. The Hero Destini 125 is the perfect gearless companion for those who want a stress-free ride through the city.</p>
+                <p class="mb-8 text-light">Powered by a refined **125cc engine** with **i3S technology**, the Destini 125 delivers a smooth, punchy performance while maintaining a mileage of **50 km/l**. With its spacious seat and ample storage, it's the ideal rental for shopping trips or relaxed city exploration.</p>
+                <button onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:-translate-y-1 shadow-lg">Book Now</button>
+            </div>
+            <div class="relative">
+                <img src="hero destini125.png" alt="Hero Destini 125 Rental">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light">
+        <div class="max-w-[1200px] mx-auto px-5">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-primary">Technical Specifications</h2>
+                <p class="text-grey mt-6">Premium features for a gearless lifestyle</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl border-l-4 border-primary shadow-md text-center">
+                    <i class="fas fa-cogs text-4xl text-secondary mb-4"></i>
+                    <h3 class="font-bold text-xl">125cc</h3>
+                    <p class="text-grey">Programmed FI with XSens</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border-l-4 border-primary shadow-md text-center">
+                    <i class="fas fa-stop-circle text-4xl text-secondary mb-4"></i>
+                    <h3 class="font-bold text-xl">i3S Tech</h3>
+                    <p class="text-grey">Smart Idle Start-Stop</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border-l-4 border-primary shadow-md text-center">
+                    <i class="fas fa-shopping-bag text-4xl text-secondary mb-4"></i>
+                    <h3 class="font-bold text-xl">Mobile Port</h3>
+                    <p class="text-grey">Built-in USB Charging</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border-l-4 border-primary shadow-md text-center">
+                    <i class="fas fa-fill-drip text-4xl text-secondary mb-4"></i>
+                    <h3 class="font-bold text-xl">External Fuel</h3>
+                    <p class="text-grey">Easy External Refilling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="py-16 bg-white">
+        <div class="max-w-[1200px] mx-auto px-5">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-2 inline-block relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-primary">Rental Packages</h2>
+                <p class="text-grey mt-6">Flexible gearless rental options</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="pricing-card bg-light p-8 rounded-2xl border-2 border-grey transition-all">
+                    <h3 class="text-2xl font-bold">Daily Ease</h3>
+                    <div class="text-4xl font-bold text-primary my-6">₹...<span class="text-sm text-dark font-normal">/Day</span></div>
+                    <ul class="space-y-4 mb-8">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> 100 KM Limit</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Clean Helmet Included</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Full Under-seat Storage</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Quick Handover</li>
+                    </ul>
+                    <button onclick="window.location.href='tel:+918576000083'" class="w-full py-4 bg-primary text-white rounded-lg font-bold hover:bg-secondary transition">Book Day</button>
+                </div>
+                <div class="pricing-card bg-light p-8 rounded-2xl border-2 border-grey transition-all">
+                    <h3 class="text-2xl font-bold">Weekly Comfort</h3>
+                    <div class="text-4xl font-bold text-primary my-6">₹....<span class="text-sm text-dark font-normal">/Week</span></div>
+                    <ul class="space-y-4 mb-8">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> 700 KM Limit</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Doorstep Delivery</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Regular Sanitization</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Assistance on Call</li>
+                    </ul>
+                    <button onclick="window.location.href='tel:+918576000083'" class="w-full py-4 bg-primary text-white rounded-lg font-bold hover:bg-secondary transition">Book Week</button>
+                </div>
+                <div class="pricing-card bg-light p-8 rounded-2xl border-2 border-grey transition-all">
+                    <h3 class="text-2xl font-bold">Monthly Local</h3>
+                    <div class="text-4xl font-bold text-primary my-6">₹....<span class="text-sm text-dark font-normal">/Month</span></div>
+                    <ul class="space-y-4 mb-8">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> 2000 KM Limit</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Included Maintenance Fee</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Best for Family Use</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Easy Monthly Renewal</li>
+                    </ul>
+                    <button onclick="window.location.href='tel:+918576000083'" class="w-full py-4 bg-primary text-white rounded-lg font-bold hover:bg-secondary transition">Book Month</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-form" class="py-16 bg-light">
+        <div class="max-w-[600px] mx-auto px-5 bg-white p-8 rounded-2xl shadow-2xl">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-dark">Reserve Your Destini 125</h2>
+                <p class="text-grey mt-2">The smartest way to ride gearless in Gorakhpur.</p>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <input type="hidden" name="access_key" value="160ce8ff-c9a7-4e52-84b3-c3415c3cc08d">
+                <input type="text" name="name" placeholder="Full Name" required class="w-full p-3 border-2 border-grey rounded-lg focus:border-primary outline-none">
+                <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full p-3 border-2 border-grey rounded-lg focus:border-primary outline-none">
+                <input type="date" name="pickup_date" required class="w-full p-3 border-2 border-grey rounded-lg focus:border-primary outline-none">
+                <select name="duration" required class="w-full p-3 border-2 border-grey rounded-lg focus:border-primary outline-none">
+                    <option value="">Select Rental Duration</option>
+                    <option value="daily">Daily Ease</option>
+                    <option value="weekly">Weekly Comfort</option>
+                    <option value="monthly">Monthly Local</option>
+                </select>
+                <textarea name="message" placeholder="Delivery address or special requests..." rows="4" class="w-full p-3 border-2 border-grey rounded-lg focus:border-primary outline-none"></textarea>
+                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-4 rounded-lg shadow-lg transform hover:scale-[1.02] transition-all">Check Availability</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-12">
+        <div class="max-w-[1200px] mx-auto px-5 grid md:grid-cols-3 gap-12 border-b border-grey pb-8">
+            <div>
+                <h3 class="text-primary text-xl font-bold mb-4">Taxiverz</h3>
+                <p>Leading provider of premium scooters and bike rentals for a seamless travel experience.</p>
+            </div>
+            <div>
+                <h3 class="text-primary text-xl font-bold mb-4">Quick Links</h3>
+                <div class="flex flex-col gap-2">
+                    <a href="index.html" class="hover:text-primary transition">Home</a>
+                    <a href="car-rental.html" class="hover:text-primary transition">Car Rental</a>
+                    <a href="bike-rental.html" class="hover:text-primary transition">Bike Rental</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-primary text-xl font-bold mb-4">Contact</h3>
+                <p><i class="fas fa-phone text-secondary mr-2"></i> +91 8576000083</p>
+                <p><i class="fas fa-envelope text-secondary mr-2"></i> cabtaxiverz@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Gorakhpur, UP</p>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-grey text-sm">
+            &copy; 2026 Taxiverz. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            if (mobileMenu.classList.contains('active')) {
+                menuIcon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+    </script>
+</body>
+</html>
