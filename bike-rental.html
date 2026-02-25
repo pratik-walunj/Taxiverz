@@ -1,380 +1,155 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bike Rental in Gorakhpur - Taxiverz</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="route-pages.css">
+    <title> Bikes Collection - Taxiverz Gorakhpur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        .bike-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .bike-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-        .bike-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        .bike-image {
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-        .bike-details {
-            padding: 1.5rem;
-        }
-        .bike-details h3 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        .bike-specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        .spec-item {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        .spec-item i {
-            color: #ff5800;
-            margin-right: 8px;
-        }
-        .bike-price {
-            font-size: 1.5rem;
-            color: #ff5800;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-        .page-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="taxiverz.avif" alt="Taxiverz Logo" class="logo-img">
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <nav class="bg-black text-white py-4 sticky top-0 z-50 shadow-xl">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <img src="taxiverz.avif" alt="Taxiverz Logo" class="h-10">
+            <div class="hidden md:flex space-x-8 font-semibold text-sm">
+                <a href="index.html" class="hover:text-orange-500 transition">Home</a>
+                <a href="car-rental.html" class="hover:text-orange-500 transition">Car Rental</a>
+                <a href="bike-rental.html" class="text-orange-500">Bike Rental</a>
+                <a href="contact.html" class="hover:text-orange-500 transition">Contact</a>
             </div>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="car-rental.html" class="nav-link">Car Rental</a>
-                <a href="bike-rental.html" class="nav-link active">Bike Rental</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+            <div class="md:hidden text-2xl text-orange-500 cursor-pointer">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Bike Rental in Gorakhpur</h1>
-            <p>Rent premium bikes for your daily commute or weekend adventures</p>
+    <header class="bg-gradient-to-r from-gray-900 to-black py-10 md:py-16 text-center text-white relative border-b border-orange-500/20">
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-3 text-white tracking-tight">Bike Rental in Gorakhpur</h1>
+            <p class="text-orange-400 text-base md:text-lg font-medium opacity-90">Explore Gorakhpur with the best maintained bikes</p>
+        </div>
+    </header>
+
+    <section class="py-10 container mx-auto px-4 flex-grow">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
+            
+            <script>
+                const bikeData = [
+                    { name: "Hero Xtreme 160", img: "hero xtreme 160.jpg", desc: "Sporty performance with agile handling.", cc: "160cc", mil: "50 km/l", gear: "5-Speed", wt: "138 kg", link: "hero-xtreme-160.html" },
+                    { name: "Bajaj Pulsar 150", img: "bajaj-pulsar.jpg", desc: "The legendary commuter with power.", cc: "150cc", mil: "50 km/l", gear: "5-Speed", wt: "144 kg", link: "bajaj-pulsar.html" },
+                    { name: "Bajaj Avenger ", img: "bajaj-avenger.jpg", desc: "Premium cruiser for long rides.", cc: "220cc", mil: "40 km/l", gear: "5-Speed", wt: "152 kg", link: "bajaj-avenger.html" },
+                                        { name: "Thunderbird 350", img: "thunderbird-350.jpg", desc: "Thunderbird 350 is a comfortable cruiser bike designed for long rides.", cc: "350cc", mil: "35 km/l", gear: "5-Speed", wt: "195 kg", link: "thunderbird-350.html" },
+
+                    { name: "Bullet Classic 350", img: "bullet-classic-350.jpg", desc: "Retro charm meets heavy performance.", cc: "350cc", mil: "35 km/l", gear: "5-Speed", wt: "192 kg", link: "bullet-classic-350.html" },
+                    { name: "Jawa Classic", img: "jawa-classic.jpg", desc: "Timeless design for vintage lovers.", cc: "293cc", mil: "37 km/l", gear: "6-Speed", wt: "170 kg", link: "jawa-classic.html" },
+                    { name: "Hero HF Deluxe", img: "herohfdelux.png", desc: "Most fuel-efficient commuter.", cc: "97cc", mil: "70 km/l", gear: "4-Speed", wt: "112 kg", link: "hero-hF-deluxe.html" },
+                    { name: "Hero Passion Pro", img: "hero passion pro.png", desc: "Stylish commuter with i3S technology.", cc: "110cc", mil: "65 km/l", gear: "4-Speed", wt: "116 kg", link: "hero-passion-pro.html" },
+                    { name: "Bajaj Discover ", img: "bajaj discover.png", desc: "Balance of power and mileage.", cc: "125cc", mil: "60 km/l", gear: "5-Speed", wt: "140 kg", link: "bajaj-discover.html" },
+                    { name: "Honda Activa ", img: "honda activa.png", desc: "India's favorite family scooter.", cc: "110cc", mil: "60 km/l", gear: "CVT", wt: "109 kg", link: "honda-activa.html" },
+                    { name: "Hero Destini 125", img: "hero destini125.png", desc: "Premium gearless scooter.", cc: "125cc", mil: "55 km/l", gear: "CVT", wt: "111 kg", link: "hero-destini125.html" },
+                    { name: "TVS Duet", img: "tvs deut.png", desc: "Sturdy metal body scooter.", cc: "110cc", mil: "60 km/l", gear: "CVT", wt: "115 kg", link: "TVS-duet.html" },
+                    { name: "Yamaha Fascino", img: "yemaha.png", desc: "Lightweight retro scooter.", cc: "125cc", mil: "68 km/l", gear: "CVT", wt: "99 kg", link: "yamaha-fascino.html" }
+                ];
+
+                document.write(bikeData.map(bike => `
+                    <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-200 transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                        
+                        <div class="w-full h-44 bg-gray-100 overflow-hidden relative">
+                            <div class="absolute top-2 right-2 bg-black/70 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10 backdrop-blur-sm">
+                                AVAILABLE
+                            </div>
+                            <img src="${bike.img}" alt="${bike.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1 leading-tight line-clamp-1">${bike.name}</h3>
+                            <p class="text-gray-500 text-xs mb-4 line-clamp-1">${bike.desc}</p>
+                            
+                            <div class="grid grid-cols-2 gap-2 mb-5">
+                                <div class="flex items-center text-xs text-gray-700 bg-gray-50 border border-gray-100 py-1.5 px-2 rounded-md">
+                                    <i class="fas fa-tachometer-alt text-orange-500 mr-1.5 w-3 text-center"></i> 
+                                    <span class="font-medium">${bike.cc}</span>
+                                </div>
+                                <div class="flex items-center text-xs text-gray-700 bg-gray-50 border border-gray-100 py-1.5 px-2 rounded-md">
+                                    <i class="fas fa-gas-pump text-orange-500 mr-1.5 w-3 text-center"></i> 
+                                    <span class="font-medium">${bike.mil}</span>
+                                </div>
+                                <div class="flex items-center text-xs text-gray-700 bg-gray-50 border border-gray-100 py-1.5 px-2 rounded-md">
+                                    <i class="fas fa-cog text-orange-500 mr-1.5 w-3 text-center"></i> 
+                                    <span class="font-medium">${bike.gear}</span>
+                                </div>
+                                <div class="flex items-center text-xs text-gray-700 bg-gray-50 border border-gray-100 py-1.5 px-2 rounded-md">
+                                    <i class="fas fa-weight-hanging text-orange-500 mr-1.5 w-3 text-center"></i> 
+                                    <span class="font-medium">${bike.wt}</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto space-y-2">
+                                <a href="tel:+918576000083" class="flex items-center justify-center w-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-2.5 rounded-lg transition shadow-md shadow-orange-500/20">
+                                    <i class="fas fa-phone-alt mr-2"></i> Book Now
+                                </a>
+                                <a href="${bike.link}" class="flex items-center justify-center w-full border border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-black text-sm font-semibold py-2 rounded-lg transition">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `).join(''));
+            </script>
         </div>
     </section>
 
-    <section style="padding: 60px 0; background: #f8f9fa;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Bike Collection</h2>
-                <p>Choose from our wide range of bikes</p>
-            </div>
-
-            <div class="bike-grid">
-                <!-- Hero Xtreme -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Hero Xtreme 160</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 160cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 50 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 5-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 138 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <!-- <button class="btn-primary" onclick="window.location.href='tel:+918576000083'">Book Now</button> -->
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='hero-xtreme-160.html'">View Details</button>
+    <footer class="bg-black text-gray-400 pt-12 pb-6 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
+                <div class="space-y-3">
+                    <img src="taxiverz.avif" alt="Taxiverz" class="h-10 mb-2">
+                    <p class="leading-relaxed">Gorakhpur's leading vehicle rental service, providing high-quality rides for all your needs.</p>
+                    <div class="flex space-x-4 text-orange-500 text-lg pt-2">
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-
-                <!-- Bajaj Avenger -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Bajaj Avenger</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 220cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 40 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 5-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 152 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <!-- <button class="btn-primary" onclick="window.location.href='tel:+918576000083'">Book Now</button> -->
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='bajaj-avenger.html'">View Details</button>
-                    </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-orange-500 transition">Home</a></li>
+                        <li><a href="car-rental.html" class="hover:text-orange-500 transition">Car Rental</a></li>
+                        <li><a href="bike-rental.html" class="text-orange-500 transition">Bike Rental</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-500 transition">Contact Us</a></li>
+                    </ul>
                 </div>
-
-                <!-- Jawa -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Jawa Classic</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 293cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 37 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 6-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 170 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <!-- <button class="btn-primary" onclick="window.location.href='tel:+918576000083'">Book Now</button> -->
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='jawa-classic.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Bajaj Pulsar -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Bajaj Pulsar</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 150cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 50 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 5-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 144 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <!-- <button class="btn-primary" onclick="window.location.href='tel:+918576000083'">Book Now</button> -->
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='bajaj-pulsar.html'">View Details</button> 
-                    </div>
-                </div>
-
-                <!-- Royal Enfield Bullet Classic 350 -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Bullet Classic 350</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 350cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 35 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 5-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 192 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <!-- <button class="btn-primary" onclick="window.location.href='tel:+918576000083'">Book Now</button> -->
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='bullet-classic-350.html'">View Details</button> 
-                    </div>
-                </div>
-
-                <!-- Royal Enfield Thunderbird -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Thunderbird 350</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 350cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 35 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 5-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 195 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <!-- <button class="btn-primary" onclick="window.location.href='tel:+918576000083'">Book Now</button> -->
-                         <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='thunderbird-350.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Hero HF Deluxe -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Hero HF Deluxe</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 97cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 70 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 4-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 112 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                         <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='hero-hf-deluxe.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Hero Passion Pro -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Hero Passion Pro</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 110cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 65 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 4-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 116 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                       <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='hero-passion-pro.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Bajaj Discover -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Bajaj Discover</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 125cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 60 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> 5-Speed</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 140 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                       <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='bajaj-discover.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Hero Destini 125 -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Hero Destini 125</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 125cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 55 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> CVT</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 111 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='hero-destini125.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Honda Activa -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Honda Activa</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 110cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 60 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> CVT</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 109 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='honda-activa.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- TVS Jupiter (Duet) -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>TVS Duet</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 110cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 60 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> CVT</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 102 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                        <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='TVS-duet.html'">View Details</button>
-                    </div>
-                </div>
-
-                <!-- Yamaha Fascino -->
-                <div class="bike-card">
-                    <div class="bike-image">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <div class="bike-details">
-                        <h3>Yamaha Fascino</h3>
-                        <div class="bike-specs">
-                            <div class="spec-item"><i class="fas fa-tachometer-alt"></i> 125cc</div>
-                            <div class="spec-item"><i class="fas fa-gas-pump"></i> 58 km/l</div>
-                            <div class="spec-item"><i class="fas fa-cog"></i> CVT</div>
-                            <div class="spec-item"><i class="fas fa-weight"></i> 99 kg</div>
-                        </div>
-                        <div class="bike-price">📞 +91-8576000083</div>
-                       <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='yamaha-fascino.html'">View Details</button>
-                    </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Get In Touch</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-orange-500 mt-1 mr-3"></i>
+                            <span>Gorakhpur, Uttar Pradesh, 273001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-orange-500 mr-3"></i>
+                            <a href="tel:+918576000083" class="hover:text-white transition">+91 8576000083</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-orange-500 mr-3"></i>
+                            <a href="mailto:cabtaxiverz@gmail.com" class="hover:text-white transition">cabtaxiverz@gmail.com</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 15px;">
-                <h3 style="color: #333; margin-bottom: 1rem;">Need Help Choosing?</h3>
-                <p style="color: #666; margin-bottom: 1.5rem;">Call us now and our team will help you select the perfect bike for your needs</p>
-                <a href="tel:+918576000083" class="btn-primary" style="display: inline-block; padding: 15px 40px; font-size: 1.2rem;">
-                    <i class="fas fa-phone"></i> Call +91-8576000083
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Taxiverz</h3>
-                    <p>Your trusted partner for bike and car rentals</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-phone"></i> +91 8576000083</p>
-                    <p><i class="fas fa-envelope"></i> cabtaxiverz@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Gorakhpur, UP-273001</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Taxiverz. All rights reserved.</p>
+            <div class="border-t border-gray-800 pt-6 text-center text-[11px] tracking-widest uppercase text-gray-600">
+                &copy; 2026 TAXIVERZ GORAKHPUR. ALL RIGHTS RESERVED.
             </div>
         </div>
     </footer>
+
 </body>
 </html>
